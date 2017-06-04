@@ -125,7 +125,7 @@ namespace ThucTap5_QuanLyKhoHang
             if (MessageBox.Show("Bạn muốn xóa thông tin?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 con.Open();
-                string sua = string.Format("delete from sach where ma={0}", textMa.Text);
+                string sua = string.Format("delete from hanghoa where ma={0}", textMa.Text);
                 SqlCommand cmd = new SqlCommand(sua, con);
                 cmd.CommandType = CommandType.Text;
                 try
