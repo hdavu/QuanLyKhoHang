@@ -23,7 +23,10 @@ namespace ThucTap5_QuanLyKhoHang
         FormLichSu frmLS = new FormLichSu();
         FormThongTin frmTT = new FormThongTin();
         FormHuongDan frmHD = new FormHuongDan();
-
+        FormNhapHangDC frmNHDC = new FormNhapHangDC();
+        hanghoa frmhanghoa = new hanghoa();
+        LSNhap frmLichSuNhap = new LSNhap();
+        LSXuat frmLichSuXuat = new LSXuat();
         public FormMain()
         {
             InitializeComponent();
@@ -54,20 +57,10 @@ namespace ThucTap5_QuanLyKhoHang
             frmSXNHH.ShowDialog();
         }
 
-        private void xuấtHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmXH.ShowDialog();
-        }
+        
+      
 
-        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmNH.ShowDialog();
-        }
-
-        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLS.ShowDialog();
-        }
+       
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -77,6 +70,41 @@ namespace ThucTap5_QuanLyKhoHang
         private void hướngDẫnToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmHD.ShowDialog();
+        }
+
+        private void mớiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNH.ShowDialog();
+        }
+
+        private void đãCóToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNHDC.ShowDialog();
+        }
+
+        private void xuấtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXH.ShowDialog();
+        }
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmhanghoa.ShowDialog();
+        }
+
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNHDC.ShowDialog();
+        }
+
+        private void nhậpHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLichSuNhap.ShowDialog();
+        }
+
+        private void xuấtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLichSuXuat.ShowDialog();
         }
     }
 }

@@ -112,13 +112,80 @@
     <Compile Include="FormXuatHang.Designer.cs">
       <DependentUpon>FormXuatHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhapHangDC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhapHangDC.Designer.cs">
+      <DependentUpon>FormNhapHangDC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="hanghoa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="hanghoa.Designer.cs">
+      <DependentUpon>hanghoa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LSNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LSNhap.Designer.cs">
+      <DependentUpon>LSNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LSXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LSXuat.Designer.cs">
+      <DependentUpon>LSXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuanLyKhoHangDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyKhoHangDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyKhoHangDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuanLyKhoHangDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormLichSu.resx">
+      <DependentUpon>FormLichSu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapHang.resx">
+      <DependentUpon>FormNhapHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhapHangDC.resx">
+      <DependentUpon>FormNhapHangDC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaXoaNhaCC.resx">
+      <DependentUpon>FormSuaXoaNhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaXoaNhaNH.resx">
+      <DependentUpon>FormSuaXoaNhaNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNhaCC.resx">
+      <DependentUpon>FormThemNhaCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormThemNhaNH.resx">
+      <DependentUpon>FormThemNhaNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormXuatHang.resx">
+      <DependentUpon>FormXuatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="hanghoa.resx">
+      <DependentUpon>hanghoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LSNhap.resx">
+      <DependentUpon>LSNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LSXuat.resx">
+      <DependentUpon>LSXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -138,6 +205,28 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuanLyKhoHangDataSet.xsc">
+      <DependentUpon>QuanLyKhoHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhoHangDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhoHangDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyKhoHangDataSet.xss">
+      <DependentUpon>QuanLyKhoHangDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhoHangDataSet1.xsc">
+      <DependentUpon>QuanLyKhoHangDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="QuanLyKhoHangDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QuanLyKhoHangDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuanLyKhoHangDataSet1.xss">
+      <DependentUpon>QuanLyKhoHangDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

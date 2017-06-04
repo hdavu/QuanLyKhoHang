@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
@@ -11,35 +12,33 @@ using System.Windows.Forms;
 
 namespace ThucTap5_QuanLyKhoHang
 {
-    public partial class FormXuatHang : Form
+    public partial class FormNhapHangDC : Form
     {
-        public FormXuatHang()
+        SqlConnection con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=QuanLyKhoHang;Integrated Security=True");
+
+        public FormNhapHangDC()
         {
             InitializeComponent();
         }
 
-
-
-
-
-        SqlConnection con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=QuanLyKhoHang;Integrated Security=True");
-
-
-        private void FormXuatHang_Load(object sender, EventArgs e)
+        private void FormNhapHangDC_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyKhoHangDataSet1.nhanhanhang' table. You can move, or remove it, as needed.
-            this.nhanhanhangTableAdapter.Fill(this.quanLyKhoHangDataSet1.nhanhanhang);
             // TODO: This line of code loads data into the 'quanLyKhoHangDataSet.nhacungcap' table. You can move, or remove it, as needed.
             this.nhacungcapTableAdapter.Fill(this.quanLyKhoHangDataSet.nhacungcap);
-            LoadDataHang();
+
             textMaphieu.Text = GetMaxId().ToString();
+            LoadDataHang();
+            LoadDataHangDaNhap();
+
         }
+
+
 
 
         private void LoadDataHang()
         {
 
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT ma, ten, xuatxu, donvitinh, dongia,soluong FROM hanghoa  WHERE ten LIKE N'%" + textTimhang.Text + "%' ", con);
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT ma, ten, xuatxu, donvitinh, dongia FROM hanghoa  WHERE ten LIKE N'%" + textTimhang.Text + "%' ", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
@@ -51,9 +50,7 @@ namespace ThucTap5_QuanLyKhoHang
             textMahang.DataBindings.Clear();
             textDongia.DataBindings.Clear();
             textDonvitinh.DataBindings.Clear();
-            textSoDangCo.DataBindings.Clear();
 
-            textSoDangCo.DataBindings.Add("Text", dataGridView1.DataSource, "soluong");
             textTenhang.DataBindings.Add("Text", dataGridView1.DataSource, "ten");
             textXuatxu.DataBindings.Add("Text", dataGridView1.DataSource, "xuatxu");
             textDonvitinh.DataBindings.Add("Text", dataGridView1.DataSource, "donvitinh");
@@ -63,14 +60,17 @@ namespace ThucTap5_QuanLyKhoHang
         }
 
 
-        private void LoadDataHangDaXuat()
+        private void LoadDataHangDaNhap()
         {
-            SqlDataAdapter sda = new SqlDataAdapter("SELECT  hh.ten,hh.xuatxu ,ctpx.soluong  FROM chitietphieuxuat ctpx JOIN hanghoa hh  ON ctpx.hanghoama = hh.ma WHERE ctpx.phieuxuatma = '" + textMaphieu.Text + "'", con);
+
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT  hh.ten,hh.xuatxu ,ctpn.soluong  FROM chitietphieunhap ctpn JOIN hanghoa hh  ON ctpn.hanghoama = hh.ma WHERE ctpn.phieunhapma = '" + textMaphieu.Text + "'", con);
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
 
             dataGridView2.DataSource = dt;
+
+
 
 
         }
@@ -79,14 +79,10 @@ namespace ThucTap5_QuanLyKhoHang
         private int GetMaxId()
         {
             int pid;
-            using (SqlCommand cmd = new SqlCommand("SELECT MAX(ma) AS ID FROM phieuxuat", con))
+            using (SqlCommand cmd = new SqlCommand("SELECT MAX(ma) AS ID FROM phieunhap", con))
             {
-
                 con.Open();
-                if (cmd.ExecuteScalar() == DBNull.Value)
-                    pid = 1;
-                else 
-                    pid = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
+                pid = Convert.ToInt32(cmd.ExecuteScalar()) + 1;
                 con.Close();
                 return pid;
             }
@@ -95,22 +91,11 @@ namespace ThucTap5_QuanLyKhoHang
 
 
 
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textTimhang_TextChanged(object sender, EventArgs e)
-        {
-            LoadDataHang();
-        }
-
         private void buttonKhoaTuychinh_Click(object sender, EventArgs e)
         {
             if (texttenphieu.TextLength > 0 && textManhaCC.TextLength > 0)
             {
-                if ((MessageBox.Show("Bạn muốn tạo phiếu xuất này? Thao tác không thể hoàn tác ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                if ((MessageBox.Show("Bạn muốn tạo phiếu cung cấp này? Thao tác không thể hoàn tác ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
 
                     texttenphieu.ReadOnly = true;
@@ -122,8 +107,8 @@ namespace ThucTap5_QuanLyKhoHang
 
                     con.Open();
 
-                    string chuoisql = "insert into phieuxuat(ma,ten,ngayxuat,nhanhanhangma,thukhoma) select N'{0}',N'{1}',N'{2}',N'{3}',1";
-                    string them = string.Format(chuoisql, textMaphieu.Text, texttenphieu.Text, dateTimePicker1.Value.ToString("MM-dd-yyyy"), textManhaCC.Text);
+                    string chuoisql = "insert into phieunhap(ma,ten,ngaynhap,nhacungcapma,thukhoma) select N'{0}',N'{1}',N'{2}',N'{3}',1";
+                    string them = string.Format(chuoisql, textMaphieu.Text, texttenphieu.Text, dateTimePicker1.Value.ToString("MM-dd-yyyy"), textManhaCC.Text, 1);
                     SqlCommand cmd = new SqlCommand(them, con);
 
 
@@ -149,30 +134,32 @@ namespace ThucTap5_QuanLyKhoHang
 
         private void comboNhaCC_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //textManhaCC.Clear();
+
 
             if (comboNhaCC.SelectedItem != null)
             {
+                // do something
                 textManhaCC.Text = comboNhaCC.SelectedValue.ToString();
+
             }
+
+
         }
 
         private void buttonTiep_Click(object sender, EventArgs e)
         {
-
-
-            if ( int.Parse(textSoXuat.Text) < int.Parse(textSoDangCo.Text))
+            if (textSoluong.TextLength > 0)
             {
-                if ((MessageBox.Show("Bạn muốn thêm hàng này vào phiếu xuất?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                if ((MessageBox.Show("Bạn muốn thêm hàng này vào phiếu nhập?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
                 {
                     con.Open();
 
-                    string chuoisql = "insert into chitietphieuxuat( phieuxuatma,hanghoama,soluong ) select N'{0}',N'{1}',N'{2}'";
-                    string them = string.Format(chuoisql, textMaphieu.Text, textMahang.Text, Int16.Parse(textSoXuat.Text));
+                    string chuoisql = "insert into chitietphieunhap( phieunhapma,hanghoama,soluong ) select N'{0}',N'{1}',N'{2}'";
+                    string them = string.Format(chuoisql, textMaphieu.Text, textMahang.Text, Int16.Parse(textSoluong.Text));
                     SqlCommand cmd = new SqlCommand(them, con);
 
-                    string chuoisql2 = "update hanghoa set soluong = soluong - N'{0}' where ma = N'{1}'";
-                    string capnhat = string.Format(chuoisql2, Int16.Parse(textSoXuat.Text), textMahang.Text);
+                    string chuoisql2 = "update hanghoa set soluong = soluong + N'{0}' where ma = N'{1}'";
+                    string capnhat = string.Format(chuoisql2, Int16.Parse(textSoluong.Text), textMahang.Text);
                     SqlCommand cmd2 = new SqlCommand(capnhat, con);
 
 
@@ -183,7 +170,7 @@ namespace ThucTap5_QuanLyKhoHang
                         cmd.ExecuteNonQuery();
                         cmd2.ExecuteNonQuery();
                         MessageBox.Show("Thành công");
-                        LoadDataHangDaXuat();
+                        LoadDataHangDaNhap();
                         con.Close();
                     }
                     catch (Exception ex)
@@ -197,9 +184,13 @@ namespace ThucTap5_QuanLyKhoHang
             }
             else
             {
-                MessageBox.Show("Không thể xuất quá số đang có");
+                MessageBox.Show("Bạn chưa nhập số lượng");
             }
+        }
 
+        private void textTimhang_TextChanged(object sender, EventArgs e)
+        {
+            LoadDataHang();
         }
     }
 }
