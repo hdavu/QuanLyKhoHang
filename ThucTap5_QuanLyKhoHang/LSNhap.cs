@@ -35,8 +35,6 @@ namespace ThucTap5_QuanLyKhoHang
 
             textBox2.DataBindings.Add("Text", dataGridView1.DataSource, "ma");
 
-           
-
         }
 
 
