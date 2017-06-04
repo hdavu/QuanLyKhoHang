@@ -45,7 +45,11 @@
             this.hướngDẫnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtTenThuKho = new System.Windows.Forms.TextBox();
+            this.lblTennguoidung = new System.Windows.Forms.Label();
+            this.lblAcc = new System.Windows.Forms.Label();
+            this.dgvHangton = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangton)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -172,19 +176,56 @@
             this.txtTenThuKho.Name = "txtTenThuKho";
             this.txtTenThuKho.Size = new System.Drawing.Size(163, 20);
             this.txtTenThuKho.TabIndex = 2;
+            this.txtTenThuKho.TextChanged += new System.EventHandler(this.txtTenThuKho_TextChanged);
+            // 
+            // lblTennguoidung
+            // 
+            this.lblTennguoidung.Location = new System.Drawing.Point(532, 0);
+            this.lblTennguoidung.Name = "lblTennguoidung";
+            this.lblTennguoidung.Size = new System.Drawing.Size(130, 24);
+            this.lblTennguoidung.TabIndex = 3;
+            this.lblTennguoidung.Text = "label1";
+            this.lblTennguoidung.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblAcc
+            // 
+            this.lblAcc.AutoSize = true;
+            this.lblAcc.Location = new System.Drawing.Point(311, 7);
+            this.lblAcc.Name = "lblAcc";
+            this.lblAcc.Size = new System.Drawing.Size(35, 13);
+            this.lblAcc.TabIndex = 4;
+            this.lblAcc.Text = "label1";
+            this.lblAcc.Visible = false;
+            // 
+            // dgvHangton
+            // 
+            this.dgvHangton.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHangton.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHangton.Location = new System.Drawing.Point(12, 30);
+            this.dgvHangton.Name = "dgvHangton";
+            this.dgvHangton.Size = new System.Drawing.Size(647, 361);
+            this.dgvHangton.TabIndex = 6;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 403);
+            this.Controls.Add(this.dgvHangton);
+            this.Controls.Add(this.lblAcc);
+            this.Controls.Add(this.lblTennguoidung);
             this.Controls.Add(this.txtTenThuKho);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(687, 441);
+            this.MinimumSize = new System.Drawing.Size(687, 441);
             this.Name = "FormMain";
             this.Text = "FormMain";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHangton)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +249,8 @@
         private System.Windows.Forms.ToolStripMenuItem sửaXóaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmNhàNhậnHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaXÓaNhàNhậnHàngToolStripMenuItem;
+        private System.Windows.Forms.Label lblTennguoidung;
+        private System.Windows.Forms.Label lblAcc;
+        private System.Windows.Forms.DataGridView dgvHangton;
     }
 }
