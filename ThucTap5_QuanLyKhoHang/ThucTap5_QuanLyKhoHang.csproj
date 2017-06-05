@@ -59,6 +59,7 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="FormSuaXoaNhaCC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLichSu.resx">
       <DependentUpon>FormLichSu.cs</DependentUpon>
+=======
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+>>>>>>> parent of 511bf4c... bản chuẩn
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

@@ -36,6 +36,7 @@ namespace ThucTap5_QuanLyKhoHang
         {
             hien(strSql);
         }
+<<<<<<< HEAD
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -125,6 +126,8 @@ namespace ThucTap5_QuanLyKhoHang
             frmHD.ShowDialog();
         }
 
+=======
+>>>>>>> parent of 511bf4c... bản chuẩn
 =======
 >>>>>>> parent of 511bf4c... bản chuẩn
     }

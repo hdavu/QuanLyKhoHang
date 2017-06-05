@@ -38,6 +38,7 @@
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.txtMa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -54,6 +55,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cboTimkiem = new System.Windows.Forms.ComboBox();
 =======
+=======
+>>>>>>> parent of 511bf4c... bản chuẩn
             this.txtTenThuKho = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +65,9 @@
             this.thêmNhàNhậnHàngMớiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xuấtHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
+>>>>>>> parent of 511bf4c... bản chuẩn
+=======
 >>>>>>> parent of 511bf4c... bản chuẩn
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -128,6 +134,7 @@
             this.hướngDẫnToolStripMenuItem1.Name = "hướngDẫnToolStripMenuItem1";
             this.hướngDẫnToolStripMenuItem1.Size = new System.Drawing.Size(134, 22);
             this.hướngDẫnToolStripMenuItem1.Text = "Hướng dẫn";
+<<<<<<< HEAD
             // 
             // txtMa
             // 
@@ -293,6 +300,56 @@
             this.thêmNhàNhậnHàngMớiToolStripMenuItem.Text = "Nhà nhận hàng";
             // 
             // xuấtHàngToolStripMenuItem
+=======
+>>>>>>> parent of 511bf4c... bản chuẩn
+            // 
+            this.xuấtHàngToolStripMenuItem.Name = "xuấtHàngToolStripMenuItem";
+            this.xuấtHàngToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.xuấtHàngToolStripMenuItem.Text = "Xuất hàng";
+            // 
+            // nhậpHàngToolStripMenuItem
+            // 
+            this.nhậpHàngToolStripMenuItem.Name = "nhậpHàngToolStripMenuItem";
+            this.nhậpHàngToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.nhậpHàngToolStripMenuItem.Text = "Nhập hàng";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 139);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(670, 262);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(73, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tìm tên hàng";
+            // 
+            // txtTimTenHang
+            // 
+            this.txtTimTenHang.Location = new System.Drawing.Point(204, 80);
+            this.txtTimTenHang.Name = "txtTimTenHang";
+            this.txtTimTenHang.Size = new System.Drawing.Size(181, 20);
+            this.txtTimTenHang.TabIndex = 5;
+            // 
+            // thêmNhàCungCấpMớiToolStripMenuItem
+            // 
+            this.thêmNhàCungCấpMớiToolStripMenuItem.Name = "thêmNhàCungCấpMớiToolStripMenuItem";
+            this.thêmNhàCungCấpMớiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.thêmNhàCungCấpMớiToolStripMenuItem.Text = "Nhà cung cấp";
+            // 
+            // thêmNhàNhậnHàngMớiToolStripMenuItem
+            // 
+            this.thêmNhàNhậnHàngMớiToolStripMenuItem.Name = "thêmNhàNhậnHàngMớiToolStripMenuItem";
+            this.thêmNhàNhậnHàngMớiToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.thêmNhàNhậnHàngMớiToolStripMenuItem.Text = "Nhà nhận hàng";
+            // 
+            // xuấtHàngToolStripMenuItem
             // 
             this.xuấtHàngToolStripMenuItem.Name = "xuấtHàngToolStripMenuItem";
             this.xuấtHàngToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
@@ -362,6 +419,7 @@
         private System.Windows.Forms.ToolStripMenuItem xuấtHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpHàngToolStripMenuItem;
 <<<<<<< HEAD
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem thêmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sửaXóaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thêmNhàNhậnHàngToolStripMenuItem;
@@ -379,6 +437,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboTimkiem;
+=======
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTimTenHang;
+>>>>>>> parent of 511bf4c... bản chuẩn
 =======
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
