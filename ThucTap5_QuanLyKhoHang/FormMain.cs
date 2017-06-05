@@ -19,7 +19,6 @@ namespace ThucTap5_QuanLyKhoHang
         FormThemNhaNH frmTNNH = new FormThemNhaNH();
         FormSuaXoaNhaNH frmSXNHH = new FormSuaXoaNhaNH();
         FormXuatHang frmXH = new FormXuatHang();
-        FormNhapHang frmNH = new FormNhapHang();
         FormLichSu frmLS = new FormLichSu();
         FormThongTin frmTT = new FormThongTin();
         FormHuongDan frmHD = new FormHuongDan();
@@ -74,7 +73,6 @@ namespace ThucTap5_QuanLyKhoHang
 
         private void mớiToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNH.ShowDialog();
         }
 
         private void đãCóToolStripMenuItem_Click(object sender, EventArgs e)
