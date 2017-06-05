@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,71 +12,28 @@ namespace ThucTap5_QuanLyKhoHang
 {
     public partial class FormMain : Form
     {
+
+
+        FormThemNhaCC frmTNCC = new FormThemNhaCC();
+        FormSuaXoaNhaCC frmSXNCC = new FormSuaXoaNhaCC();
+        FormThemNhaNH frmTNNH = new FormThemNhaNH();
+        FormSuaXoaNhaNH frmSXNHH = new FormSuaXoaNhaNH();
+        FormXuatHang frmXH = new FormXuatHang();
+        FormNhapHang frmNH = new FormNhapHang();
+        FormLichSu frmLS = new FormLichSu();
+        FormThongTin frmTT = new FormThongTin();
+        FormHuongDan frmHD = new FormHuongDan();
+        FormNhapHangDC frmNHDC = new FormNhapHangDC();
+        hanghoa frmhanghoa = new hanghoa();
+        LSNhap frmLichSuNhap = new LSNhap();
+        LSXuat frmLichSuXuat = new LSXuat();
         public FormMain()
         {
             InitializeComponent();
-            con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=QuanLyKhoHang;Integrated Security=True");
-        }
-<<<<<<< HEAD
-        SqlConnection con;
-        string strSql = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa";
-
-        private void hien(string strSql)
-        {
-            con.Open();
-            SqlDataAdapter da = new SqlDataAdapter(strSql, con);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            con.Close();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-            hien(strSql);
-        }
-<<<<<<< HEAD
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtMa.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
-            txtTen.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            txtDonvitinh.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txtSoluong.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            txtXuatxu.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-        }
 
-        private void cboTimkiem_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string str;
-            if (cboTimkiem.Text == "Tên hàng hóa")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE ten LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Đơn vị tính")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE donvitinh LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Số lượng")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE soluong LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Xuất xứ")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE xuatxu LIKE N'%" + txtTimkiem.Text + "%'";
-            else
-                str = strSql;
-            hien(str);
-        }
-
-        private void txtTimkiem_TextChanged(object sender, EventArgs e)
-        {
-            string str;
-            if (cboTimkiem.Text == "Tên hàng hóa")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE ten LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Đơn vị tính")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE donvitinh LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Số lượng")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE soluong LIKE N'%" + txtTimkiem.Text + "%'";
-            else if (cboTimkiem.Text == "Xuất xứ")
-                str = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa WHERE xuatxu LIKE N'%" + txtTimkiem.Text + "%'";
-            else
-                str = strSql;
-            hien(str);
-        }
 
 
 
@@ -101,20 +57,10 @@ namespace ThucTap5_QuanLyKhoHang
             frmSXNHH.ShowDialog();
         }
 
-        private void xuấtHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmXH.ShowDialog();
-        }
+        
+      
 
-        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmNH.ShowDialog();
-        }
-
-        private void báoCáoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmLS.ShowDialog();
-        }
+       
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -126,9 +72,39 @@ namespace ThucTap5_QuanLyKhoHang
             frmHD.ShowDialog();
         }
 
-=======
->>>>>>> parent of 511bf4c... bản chuẩn
-=======
->>>>>>> parent of 511bf4c... bản chuẩn
+        private void mớiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNH.ShowDialog();
+        }
+
+        private void đãCóToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNHDC.ShowDialog();
+        }
+
+        private void xuấtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXH.ShowDialog();
+        }
+
+        private void hướngDẫnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmhanghoa.ShowDialog();
+        }
+
+        private void nhậpHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNHDC.ShowDialog();
+        }
+
+        private void nhậpHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLichSuNhap.ShowDialog();
+        }
+
+        private void xuấtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmLichSuXuat.ShowDialog();
+        }
     }
 }

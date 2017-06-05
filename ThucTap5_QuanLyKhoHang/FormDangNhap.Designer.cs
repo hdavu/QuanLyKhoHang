@@ -33,8 +33,6 @@
             this.txtTenDangNhap = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.ckbShow = new System.Windows.Forms.CheckBox();
-            this.lblIncorrect = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -71,42 +69,18 @@
             // 
             // btnDangNhap
             // 
-            this.btnDangNhap.Location = new System.Drawing.Point(232, 206);
+            this.btnDangNhap.Location = new System.Drawing.Point(233, 170);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(111, 33);
             this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
-            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // ckbShow
-            // 
-            this.ckbShow.AutoSize = true;
-            this.ckbShow.Location = new System.Drawing.Point(184, 147);
-            this.ckbShow.Name = "ckbShow";
-            this.ckbShow.Size = new System.Drawing.Size(109, 17);
-            this.ckbShow.TabIndex = 5;
-            this.ckbShow.Text = "Hiển thị mật khẩu";
-            this.ckbShow.UseVisualStyleBackColor = true;
-            this.ckbShow.CheckedChanged += new System.EventHandler(this.ckbShow_CheckedChanged);
-            // 
-            // lblIncorrect
-            // 
-            this.lblIncorrect.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblIncorrect.ForeColor = System.Drawing.Color.Red;
-            this.lblIncorrect.Location = new System.Drawing.Point(181, 180);
-            this.lblIncorrect.Name = "lblIncorrect";
-            this.lblIncorrect.Size = new System.Drawing.Size(218, 23);
-            this.lblIncorrect.TabIndex = 6;
-            this.lblIncorrect.Text = "label3";
             // 
             // FormDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 251);
-            this.Controls.Add(this.lblIncorrect);
-            this.Controls.Add(this.ckbShow);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTenDangNhap);
@@ -114,7 +88,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormDangNhap";
             this.Text = "Đăng nhập";
-            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,8 +100,6 @@
         private System.Windows.Forms.TextBox txtTenDangNhap;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.CheckBox ckbShow;
-        private System.Windows.Forms.Label lblIncorrect;
     }
 }
 
