@@ -13,23 +13,12 @@ namespace ThucTap5_QuanLyKhoHang
 {
     public partial class FormMain : Form
     {
-
-
-        FormThemNhaCC frmTNCC = new FormThemNhaCC();
-        FormSuaXoaNhaCC frmSXNCC = new FormSuaXoaNhaCC();
-        FormThemNhaNH frmTNNH = new FormThemNhaNH();
-        FormSuaXoaNhaNH frmSXNHH = new FormSuaXoaNhaNH();
-        FormXuatHang frmXH = new FormXuatHang();
-        FormNhapHang frmNH = new FormNhapHang();
-        FormLichSu frmLS = new FormLichSu();
-        FormThongTin frmTT = new FormThongTin();
-        FormHuongDan frmHD = new FormHuongDan();
-
         public FormMain()
         {
             InitializeComponent();
             con = new SqlConnection(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=QuanLyKhoHang;Integrated Security=True");
         }
+<<<<<<< HEAD
         SqlConnection con;
         string strSql = "select ma as [Mã], ten as [Tên hàng hóa], donvitinh as [Đơn vị tính], soluong as [Số lượng], xuatxu as [Xuất xứ] from hanghoa";
 
@@ -136,5 +125,7 @@ namespace ThucTap5_QuanLyKhoHang
             frmHD.ShowDialog();
         }
 
+=======
+>>>>>>> parent of 511bf4c... bản chuẩn
     }
 }
