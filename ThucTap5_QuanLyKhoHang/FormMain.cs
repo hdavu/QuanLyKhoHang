@@ -42,7 +42,7 @@ namespace ThucTap5_QuanLyKhoHang
         {
             frmTNCC.ShowDialog();
         }
-
+ 
         private void sửaXóaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmSXNCC.ShowDialog();
@@ -148,6 +148,11 @@ namespace ThucTap5_QuanLyKhoHang
                 MessageBox.Show(ex.Message);
                 connec.con.Close();
             }
+        }
+
+        private void hướngDẫnToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, System.IO.Path.Combine(Application.StartupPath,"huongdankhohang.htm"));
         }
     }
 }

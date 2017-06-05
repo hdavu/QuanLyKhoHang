@@ -149,14 +149,14 @@
             // nhậpHàngToolStripMenuItem1
             // 
             this.nhậpHàngToolStripMenuItem1.Name = "nhậpHàngToolStripMenuItem1";
-            this.nhậpHàngToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.nhậpHàngToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.nhậpHàngToolStripMenuItem1.Text = "Nhập Hàng";
             this.nhậpHàngToolStripMenuItem1.Click += new System.EventHandler(this.nhậpHàngToolStripMenuItem1_Click);
             // 
             // xuấtHàngToolStripMenuItem1
             // 
             this.xuấtHàngToolStripMenuItem1.Name = "xuấtHàngToolStripMenuItem1";
-            this.xuấtHàngToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.xuấtHàngToolStripMenuItem1.Size = new System.Drawing.Size(135, 22);
             this.xuấtHàngToolStripMenuItem1.Text = "Xuất Hàng";
             this.xuấtHàngToolStripMenuItem1.Click += new System.EventHandler(this.xuấtHàngToolStripMenuItem1_Click);
             // 
@@ -172,6 +172,7 @@
             this.hướngDẫnToolStripMenuItem1.Name = "hướngDẫnToolStripMenuItem1";
             this.hướngDẫnToolStripMenuItem1.Size = new System.Drawing.Size(79, 20);
             this.hướngDẫnToolStripMenuItem1.Text = "Hướng dẫn";
+            this.hướngDẫnToolStripMenuItem1.Click += new System.EventHandler(this.hướngDẫnToolStripMenuItem1_Click_1);
             // 
             // contextMenuStrip1
             // 
@@ -218,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 403);
+            this.ClientSize = new System.Drawing.Size(671, 402);
             this.Controls.Add(this.dgvHangton);
             this.Controls.Add(this.lblAcc);
             this.Controls.Add(this.lblTennguoidung);
