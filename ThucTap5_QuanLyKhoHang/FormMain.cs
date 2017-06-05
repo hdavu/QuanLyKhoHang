@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,10 +32,11 @@ namespace ThucTap5_QuanLyKhoHang
             InitializeComponent();
         }
 
-
-
-
-
+        public FormMain(string str)
+        {
+            InitializeComponent();
+            lblAcc.Text = str;
+        }
 
         private void thêmToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -103,6 +105,49 @@ namespace ThucTap5_QuanLyKhoHang
         private void xuấtHàngToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmLichSuXuat.ShowDialog();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            connec.con.Open();
+            string st = "select * from thukho where username=@acc";
+            SqlCommand cmd = new SqlCommand(st, connec.con);
+            cmd.Parameters.Add(new SqlParameter("@acc", lblAcc.Text));
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable ta = new DataTable();
+            da.Fill(ta);
+            da.Dispose();
+            dgvHangton.DataSource = ta;
+            connec.con.Close();
+            lblTennguoidung.Text = "Xin chào, " + dgvHangton.Rows[0].Cells[3].Value.ToString();
+            loadHang();
+        }
+        private void loadHang()
+        {
+            connec.con.Open();
+            string sql = "select ma as 'Mã',ten as 'Tên SP',donvitinh as 'Đơn vị tính',soluong as 'Số lượng',xuatxu as 'Xuất xứ' from hanghoa";
+            DataTable tb = new DataTable();
+            new SqlDataAdapter(new SqlCommand(sql, connec.con)).Fill(tb);
+            dgvHangton.DataSource = tb;
+            connec.con.Close();
+        }
+
+        private void txtTenThuKho_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                connec.con.Open();
+                string timkiem = "select ma as 'Mã',ten as 'Tên SP',donvitinh as 'Đơn vị tính',soluong as 'Số lượng',xuatxu as 'Xuất xứ' from hanghoa where ma like '%" + txtTenThuKho.Text + "%' or ten like N'%" + txtTenThuKho.Text + "%' or donvitinh like '%" + txtTenThuKho.Text + "%' or soluong like '%" + txtTenThuKho.Text + "%' or xuatxu like N'%" + txtTenThuKho.Text + "%'";
+                DataTable tbb = new DataTable();
+                new SqlDataAdapter(new SqlCommand(timkiem, connec.con)).Fill(tbb);
+                dgvHangton.DataSource = tbb;
+                connec.con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                connec.con.Close();
+            }
         }
     }
 }
